@@ -1,0 +1,64 @@
+/* // Question 1
+// Create a simple to-do list application using HTML, CSS and JavaScript. 
+// Users should be able to take tasks, mark tasks as completed and remove tasks from the list in javascript */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #a6bbd3;
+}
+
+.container {
+    max-width: 400px;
+    margin: 20px auto;
+    background-color: #81d6e6;
+    padding: 20px;
+    box-shadow: 0 0 10px rgb(216, 91, 8);
+    border-radius: 5px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 24px;
+}
+
+.input-container {
+    margin-bottom: 20px;
+}
+
+input[type="text"] {
+    width: 70%;
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+button {
+    padding: 8px 16px;
+    font-size: 16px;
+    background-color: #000000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #000000;
+}
+
+.completed {
+    text-decoration: line-through;
+    color: #000000;
+} 

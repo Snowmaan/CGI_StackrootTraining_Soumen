@@ -1,0 +1,87 @@
+<!-- //Build a table using an array of employees -->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Employee Details Table</title>
+  <style>
+    /* CSS styles for the table */
+    table {
+      width: 80%;
+      border-collapse: collapse;
+      margin: 20px auto;
+      font-family: Arial, sans-serif;
+      color: rgb(255, 0, 0);
+      background-color: #ffffff;
+    }
+
+    th, td {
+      border: 1px solid #5e26269c;
+      text-align: left;
+      padding: 8px;
+    }
+
+    th {
+      background-color: #314d52;
+    }
+
+    tr:nth-child(even) {
+      background-color: #ffffff;
+    }
+
+    tr:hover {
+      background-color: #c9c9c9;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Create an empty table with headers -->
+<table border="1">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th> Address </th>
+      <th>Contact Number</th>
+    </tr>
+  </thead>
+  <tbody id="employeeTableBody">
+    <!-- Table body will be populated using JavaScript -->
+  </tbody>
+</table>
+
+<script>
+  // Sample employee data array
+  const employees = [
+    { id: 1, name: 'Zhongli liuye', address: 'Bengaluru', contactNumber: 7681066789 },
+    { id: 2, name: 'Raidhen Shogun', address: 'Bhubaneswar', contactNumber: 9876892011 },
+    { id: 3, name: 'Venti Monds', address: 'Mumbai', contactNumber: 7756890921 },
+    // Add more employees as needed
+  ];
+
+  // Function to populate the table with employee data
+  function populateTable() {
+    const tableBody = document.getElementById('employeeTableBody');
+
+    // Clear existing table rows
+    tableBody.innerHTML = '';
+
+    // Loop through the employees array and create a row for each employee
+    employees.forEach((employee) => {
+      const row = document.createElement('tr');
+      row.innerHTML = `
+        <td>${employee.id}</td>
+        <td>${employee.name}</td>
+        <td>${employee.address}</td>
+        <td>${employee.contactNumber}</td>
+      `;
+
+      tableBody.appendChild(row);
+    });
+  }
+  // Call the populateTable function to initially populate the table
+  populateTable();
+</script>
+</body>
+</html>

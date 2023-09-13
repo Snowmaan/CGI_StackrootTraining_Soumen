@@ -1,0 +1,99 @@
+<!-- Exercise 3  Random Quote generator
+create a webpage that displays a random quote each time the user clicks a 
+button. Store a collection of quotes in an array, and use  Javascript to randomly
+select and display a quote when the button is clicked. -->
+
+<!-- It has html,css and js codes. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Quote Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #aaa5f3;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        #quote-container {
+            background-color: #fff;
+            border-radius: 5px;
+            padding: 20px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        #quote {
+            font-size: 18px;
+            margin: 0;
+        }
+
+        #generate-button {
+            background-color: #1e3d4b;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        #generate-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Random Quote Generator</h1>
+    <button id="generate-button">Generate Random Quote</button>
+    <div id="quote-container">
+        <p id="quote"></p>
+    </div>
+
+    <script>
+        // Array of quotes
+        const quotes = [
+            "The only way to do great work is to love what you do. - Steve Jobs",
+            "In the middle of difficulty lies opportunity. - Albert Einstein",
+            "Success is not final, failure is not fatal: It is the courage to continue that counts. - Winston Churchill",
+            "The future belongs to those who believe in the beauty of their dreams. - Eleanor Roosevelt",
+            "The only limit to our realization of tomorrow will be our doubts of today. - Franklin D. Roosevelt",
+            "The greatest glory in living lies not in never falling, but in rising every time we fall. -Nelson Mandela",
+            "The way to get started is to quit talking and begin doing. -Walt Disney",
+            "If you set your goals ridiculously high and it's a failure, you will fail above everyone else's success. -James Cameron",
+            "You may say I'm a dreamer, but I'm not the only one. I hope someday you'll join us. And the world will live as one. -John Lennon",
+            "The sanctity of law can be maintained only so long as it is the expression of the will of the people. - Bhagat Singh"
+        ];
+
+        // Function to generate a random quote
+        function generateRandomQuote() {
+            const randomIndex = Math.floor(Math.random() * quotes.length);
+            const quoteElement = document.getElementById("quote");
+            quoteElement.textContent = quotes[randomIndex];
+        }
+
+        // Attach a click event listener to the button
+        const generateButton = document.getElementById("generate-button");
+        generateButton.addEventListener("click", generateRandomQuote);
+
+        // Generate a random quote initially
+        generateRandomQuote();
+    </script>
+</body>
+</html>
