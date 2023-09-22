@@ -1,0 +1,85 @@
+//Function Component
+//JSX COde-- The JSX code is being converted to React api calls by "Babel compiler"
+//React Understands API calls -- because writing in React API is tricky,
+// so JSX is created for the ease of development.
+
+
+//Example-1:>
+
+function Hello(){
+  return <div>Hello React!</div>;
+}
+
+ReactDOM.render(
+  <Hello/>,
+  document.getElementById('mountNode'),
+);
+
+// <div id ='mountNode'></div>
+
+
+//Example-2:>
+//Always capitalize the first letter of your key components.
+function Button(){
+  return <button>TEST</button>;
+}
+
+ReactDOM.render(
+  <Button/>,
+  document.getElementById('mountNode'),
+);
+
+//Example-3:>
+// Example-3:>
+function Button(){
+  const[counter, setCounter] = useState(0); //Array destructuring
+  //State in useState(0) is the memory of the function
+  return <button onClick={() => setCounter(counter+1)}>{counter}</button>;
+}
+
+ReactDOM.render(
+  <Button/>,
+  document.getElementById('mountNode'),
+);
+
+//Output: the number on the button will increase by +1 whenever we will click on it.
+
+//Note:- the syntax for writing dynamic values in ReactJS is- { }
+
+
+
+
+
+function Button(props) {
+  const handleClick = () => props.onClickFunction(props.increment);
+  return (
+      <button onClick={handleClick}>
+          +{props.increment}
+      </button>
+  );
+}
+      
+function Display(props){
+        return(
+        <div>{props.message}</div>
+);
+}
+      
+function App(){
+        const [counter, setCounter] = useState(0);
+        const incrementCounter = (incrementValue) => setCounter(counter+incrementValue);                           return(
+        <div>
+        <Button onClickFunction={incrementCounter} increment={1} />
+        <Button onClickFunction={incrementCounter} increment={5} />
+        <Button onClickFunction={incrementCounter} increment={10} />
+        <Button onClickFunction={incrementCounter} increment={100} />
+        <Display message = {counter}/>
+        </div>
+        );
+      }
+      
+ReactDOM.render(
+<App />,
+document.getElementById('mountNode')
+);
+      
