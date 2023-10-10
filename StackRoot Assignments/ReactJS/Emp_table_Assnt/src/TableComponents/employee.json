@@ -1,0 +1,37 @@
+[
+
+    {
+        "id":1,
+        "FName": "Soumen",
+        "LName": "Satpathy",
+        "city":"Bengaluru"
+    },
+    
+    {
+        "id":2,
+        "FName": "Asutosh",
+        "LName": "Senapati",
+        "city":"Lucknow"
+    },
+    
+    {
+        "id":3,
+        "FName": "Yash",
+        "LName": "Bibhupad",
+        "city":"Mumbai"
+    },
+    
+    {
+        "id":4,
+        "FName":"Ritesh",
+        "LName": "Deshmukh",
+        "city":"Delhi"
+    },
+    
+    {
+        "id":5,
+        "FName": "Ratika",
+        "LName": "Mehrotra",
+        "city":"Hyderabad"
+    }
+]
